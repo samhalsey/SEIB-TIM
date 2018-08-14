@@ -1,0 +1,343 @@
+globals[
+  birds
+  chipmunks
+  deer
+  mice
+  opossums
+  shrews
+  squirrels
+]
+
+breed [smAnimals smAnimal]
+breed [medAnimals medAnimal]
+breed [lgAnimals lgAnimal]
+smAnimals-own[
+  adult-infestation
+  adult-list
+  BR
+  groom
+  homerange
+  HR
+  infected?
+  Linfested?
+  Ninfested?
+  Ainfested?
+  larval-infestation
+  adult-threshold
+  nymphal-threshold
+  larval-threshold
+  larvae-list
+  lifespan
+  my-base
+  nymphal-infestation
+  nymph-list
+  RC;constant max decay
+  RC-decay;RC*(exp(-0.000595*TSI
+  TSI; time since infection
+]
+medAnimals-own[
+  adult-infestation
+  adult-list
+  BR
+  groom
+  homerange
+  HR
+  infected?
+  Linfested?
+  Ninfested?
+  Ainfested?
+  larval-infestation
+  adult-threshold
+  nymphal-threshold
+  larval-threshold
+  larvae-list
+  lifespan
+  my-base
+  nymphal-infestation
+  nymph-list
+  RC;constant max decay
+  RC-decay;RC*(exp(-0.000595*TSI
+  TSI; time since infection
+]
+lgAnimals-own[
+  adult-infestation
+  adult-list
+  BR
+  groom
+  homerange
+  HR
+  infected?
+  Linfested?
+  Ninfested?
+  Ainfested?
+  larval-infestation
+  adult-threshold
+  nymphal-threshold
+  larval-threshold
+  larvae-list
+  lifespan
+  my-base
+  nymphal-infestation
+  nymph-list
+  RC;constant max decay
+  RC-decay;RC*(exp(-0.000595*TSI
+  TSI; time since infection
+]
+
+to setup-smAnimals  
+  ;;;;;;;;;;;Migratory Birds;;;;;;;;;;;;;
+  create-smAnimals initial-number-birds[
+    setup-new-bird false
+  ]
+
+  ;;;;;;;;;;;;;Eastern Chipmunk;;;;;;;;;;;;
+  create-smAnimals initial-number-chipmunks[
+    setup-new-chipmunk false
+  ]
+   
+  ;;;;;;;;;;;;Mice;;;;;;;;;;;;;;;;;
+  create-smAnimals initial-number-mice[
+    setup-new-mouse false
+  ]
+
+
+  ;;;;;;;;;;;;Short-tailed shrews;;;;;;;;;;;;;;;;;
+  create-smAnimals initial-number-shrews[
+    setup-new-shrew false
+  ]
+  
+  ;;;;;;;;;;;;;squirrels;;;;;;;;;;;;;;;;;;;
+  create-smAnimals initial-number-squirrels[
+    setup-new-squirrel false
+  ]
+  
+  reset-smAnimals-sets
+end
+
+to setup-medAnimals 
+;;;;;;;;;;;;;Virgina Opossum;;;;;;;;;;;;;;
+  create-medAnimals initial-number-opossums[
+    setup-new-opossum false
+  ]
+ 
+end
+
+to setup-lgAnimals 
+  
+  ;;;;;;;;;;;;;Deer;;;;;;;;;;;;
+  create-lgAnimals initial-number-deer[setup-new-deer false]
+  
+  reset-lgAnimals-sets
+end
+
+to set-new-smAnimals-vals [ sprouted? ]
+  if sprouted? != true[
+    setxy random-xcor random-ycor
+  ]
+  set size 2
+  set adult-infestation 0
+  set homerange patches in-radius (HR)
+  set Linfested? false
+  set Ninfested? false
+  set Ainfested? false
+  set infected? false
+  set larval-infestation 0
+  set my-base patch-here
+  set nymphal-infestation 0
+end
+
+to set-new-medAnimals-vals [ sprouted? ]
+  if sprouted? != true[
+    setxy random-xcor random-ycor
+  ]
+  set size 2
+  set adult-infestation 0
+  set homerange patches in-radius (HR)
+  set Linfested? false
+  set Ninfested? false
+  set Ainfested? false
+  set infected? false
+  set larval-infestation 0
+  set my-base patch-here
+  set nymphal-infestation 0
+end
+to set-new-lgAnimals-vals [ sprouted? ]
+  if sprouted? != true[
+    setxy random-xcor random-ycor
+  ]
+  set size 2
+  set adult-infestation 0
+  set homerange patches in-radius (HR)
+  set Linfested? false
+  set Ninfested? false
+  set Ainfested? false
+  set infected? false
+  set larval-infestation 0
+  set my-base patch-here
+  set nymphal-infestation 0
+end
+to setup-new-bird [ sprouted? ]
+  set shape "bird"
+  set color yellow
+  
+  set BR "bird"
+  set groom 0.012
+  set larval-threshold 25
+    set nymphal-threshold 25
+  set HR (100) ; set homerange (HR)
+    set RC (random-float (0.28 - .1)  + .1) ; set reservoir competency rate TBD
+    
+  set-new-smAnimals-vals sprouted?
+end
+
+
+to setup-new-chipmunk [ sprouted? ]
+  ;set shape "chipmunk top"
+  set color brown
+  set BR "chipmunk"
+  set groom 0.0146 ; set grooming rate
+  set HR (25.23133 + random-float 10.45115) ; set homerange (HR)
+  set larval-threshold 100
+  set nymphal-threshold 50
+  set RC 0.55  ;; Keesing et al 2009
+  
+  set-new-smAnimals-vals sprouted?
+end
+
+to setup-new-deer [ sprouted? ]
+  set shape "deer"
+      set BR "a-deer"
+      set color brown
+    set size 5
+    set groom 0.00495
+    set adult-infestation 0
+    set HR (900) ;; Need to adjust homerange
+    set RC 0.026
+  set-new-lgAnimals-vals sprouted?
+end
+
+to setup-new-mouse [ sprouted? ]
+  set shape "mouse top"
+  set color brown
+  
+  set BR "mouse"
+  set groom 0.00734 ;set grooming rate
+  set HR (17.8412)
+  set larval-threshold 50
+  set nymphal-threshold 15
+  set RC 0.935 ;set reservoir competency
+  
+  set-new-smAnimals-vals sprouted?
+end
+
+
+to setup-new-opossum [ sprouted? ]
+  ;set shape "opossum top"
+  set color grey
+  
+  set BR "opossum"
+  set groom 0.0343
+  set larval-threshold 5000
+  set nymphal-threshold 200
+  set HR (56.41896 + random-float 300.4058)
+    set RC 0.026  ; Keesing et al 2009
+  
+  set-new-medAnimals-vals sprouted?
+end
+
+
+to setup-new-shrew [ sprouted? ]
+ ; set shape "shrew top"
+  set color grey
+  
+  set BR "shrew"
+  set groom 0.0073 ; set grooming rate
+  set larval-threshold 150
+  set nymphal-threshold 50
+  set HR (17.8412 + random-float 57.8527) ; set homerange (HR)
+    set RC 0.512  ; set reservoir competency rate TBD
+  
+  set-new-smAnimals-vals sprouted?
+end
+
+
+to setup-new-squirrel [ sprouted? ]
+ ; set shape "squirrel top"
+  set color brown
+  
+  set BR "squirrel"
+  set groom 0.01816
+  set larval-threshold 100 ;; 
+  set nymphal-threshold 50
+  set HR (1092.548 + random-float 169.018) ; set homerange (HR)
+    set RC 0.147  ; ; Keesing et al 2009
+  
+  set-new-smAnimals-vals sprouted?
+end
+
+
+to smAnimal-movements
+  if month >= 4 [ 
+    if month < 11 [ask smAnimals[if (larval-infestation < larval-threshold)[sm-catch-larvae ]]]
+      if month < 8 [ask smAnimals [if (nymphal-infestation < larval-threshold)[sm-catch-nymphs]]]
+     ask smAnimals [move-smAnimal]]
+end
+
+
+to medAnimal-movements
+  if month >= 4 [ 
+    if month < 11 [ask medAnimals[if (larval-infestation < larval-threshold)[ med-catch-larvae]]]
+      if month < 8 [ask medAnimals [med-catch-nymphs]]
+     ask medAnimals [move-medAnimal]]
+end
+
+to lgAnimal-movements
+     if month >= 3 [ 
+       if month  < 11[ ask deer [lg-catch-adults]]
+     ask lgAnimals [move-lgAnimal]]
+end
+
+to reset-smAnimals-sets
+  set birds     smAnimals with [BR = "bird"]
+  set chipmunks smAnimals with [BR = "chipmunk"]
+  set mice      smAnimals with [BR = "mouse"]
+  set shrews    smAnimals with [BR = "shrew"]
+  set squirrels smAnimals with [BR = "squirrel"]
+end
+
+
+to reset-medAnimals-sets
+  set opossums  medAnimals with [BR = "opossum"]
+ 
+end
+to reset-lgAnimals-sets
+  set deer      lgAnimals with [BR = "a-deer"]
+
+ 
+end
+to move-smAnimal
+  ifelse distance my-base > HR[
+    face my-base
+  ][
+    rt random 360
+  ]
+  fd 1
+end
+to move-medAnimal
+  ifelse distance my-base > HR[
+    face my-base
+  ][
+    rt random 360
+  ]
+  fd 3
+end
+ to move-lgAnimal
+  ifelse distance my-base > HR[
+    face my-base
+  ][
+    rt random 360
+  ]
+  fd 5
+end
+   
+

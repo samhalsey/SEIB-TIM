@@ -1,0 +1,12 @@
+
+to record-movie
+movie-start "Modelview2.mov"
+movie-set-frame-rate 1
+movie-grab-interface;;show the initial sttae
+repeat 45 [ movie-grab-interface go]
+movie-close
+end
+
+
+
+;export-interface "week1.png"

@@ -1,0 +1,170 @@
+to feed
+  if month >= 4 [ if month <= 10 [
+      decay-RC
+  
+  feed-bugs
+  assign-host
+  infect-tick
+  
+  detach-larvae
+  detach-nymphs
+  detach-adults
+  
+  molt-probability
+  infestationstatus
+  update-infestation]]
+end
+
+;;;;;;;bloodmeal;;;;;;;;
+to feed-bugs
+  ask bugs[
+    if attach != nobody[
+      set feedtm feedtm + 1
+    ]
+  ]
+    ask smAnimals [
+      if larval-infestation > 0 [
+        set Linfested? true]
+      if nymphal-infestation > 0 [
+        set Ninfested? true]
+  ]
+     ask medAnimals [
+      if larval-infestation > 0 [
+        set Linfested? true]
+      if nymphal-infestation > 0 [
+        set Ninfested? true]
+      if adult-infestation > 0 [
+        set Ainfested? true]
+  ]
+     ask lgAnimals [
+     
+      if adult-infestation > 0 [
+        set Ainfested? true]
+  ]
+end
+
+;; update infection status if feeding on an infected host before getting ready to detach
+to decay-RC
+  ask smAnimals[
+    if (infected? =  true) [ set RC-decay (RC * exp(-0.000595 * TSI)) set TSI (TSI + 1)] 
+    ]
+  ask medAnimals[
+    if (infected? =  true) [ set RC-decay (RC * exp(-0.000595 * TSI)) set TSI (TSI + 1)] 
+    ]
+end
+
+;; update infection status if feeding on an infected host before getting ready to detach
+to infect-tick
+  ask bugs[
+    if (feedtm = infectionTime and status = "feeding" and random-float 1 < [RC-decay] of attach)[
+      set Tinfected? [infected?] of attach
+    ]
+  ]
+end
+
+;;update infection status of host if an infected tick started feeding from it
+to infect-host
+ ask bugs[
+    if (Tinfected? = true and status = "feeding" and random-float 1 < [RC] of attach)[
+      ask attach[
+        set infected? true set TSI 0
+      ]
+    ]
+  ]
+end
+
+;; Steps that all bugs have in common when detaching
+to detach-bug
+  if attach != nobody [move-to attach
+  set droppoint patch-here
+  set attach nobody
+  set feedtm 0
+  set hidden? true
+  set replete? true]
+end
+
+
+
+to assign-host
+  ask larvae[ if status = "feeding" [ set Lhost [BR] of attach]]
+ ask nymphs[ if status = "feeding" [ set Nhost [BR] of attach]]
+ ask adults[ if status = "feeding" [ set Ahost [BR] of attach]]
+  end
+
+;;;;;detach ticks;;;;;;;;
+to detach-larvae
+;; detach larvae from the host once it reaches the time it takes to complete feeding, drop from the host and move to the location of that host
+ ask larvae[
+    if feedtm = 72[
+      infect-host
+      detach-bug
+      set status "dormant"
+    set molttm 0
+      set dormant? true
+    ]
+  ]
+end
+;; detach nymphs from the host once it reaches the time it takes to complete feeding, drop from the host and move to the location of that host
+
+to detach-nymphs
+  ask nymphs[
+    if feedtm = 120[
+      infect-host
+      detach-bug 
+      set status "molting"
+      set lifespan 0
+      set dormant? false
+      set molttm molttm + 1
+      
+    ]
+  ]
+end
+
+;; detach adults from the host once it reaches the time it takes to complete feeding, drop from the host and move to the location of that host
+to detach-adults
+  ask adults[
+    if feedtm = 240[
+      infect-host
+      detach-bug
+      set status "dormant"
+      set dormant? true
+    ]
+  ]
+end
+
+;;;;;molting;;;;;;
+;; The probability that the ticks successfully molt to the next life stage
+
+to molt-probability 
+ if month > 3 [if month < 8[ ask larvae [ if molttm = 1 and random-float 1 > 0.415 [die]]]]
+ if month > 5 [ ask nymphs [ if molttm = 1 and random-float 1 > 0.276 [die]]]
+end
+
+;;;;;;infestation status;;;;;;
+;;updates the status of tick infestation on each host
+
+to infestationstatus ;; probably could also be simplified
+  ask smAnimals[
+    if larval-infestation = 0[
+      set Linfested? false]
+   if nymphal-infestation = 0[
+     set Ninfested? false]
+    if adult-infestation = 0[
+      set Ainfested? false
+    ]
+  ]
+  ask medAnimals[
+    if larval-infestation = 0[
+      set Linfested? false]
+   if nymphal-infestation = 0[
+     set Ninfested? false]
+    if adult-infestation = 0[
+      set Ainfested? false
+    ]
+  ]
+    ask lgAnimals[
+    if adult-infestation = 0[
+      set Ainfested? false
+    ]
+  ]
+end

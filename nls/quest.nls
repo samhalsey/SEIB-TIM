@@ -1,0 +1,77 @@
+
+;;;;I wonder if this could be simplified. I can't ask all turtles because that includes all the ticks as well;;;;;
+to update-infestation
+  ask smAnimals [set larvae-list larvae with [attach = myself]]
+  ask smAnimals [set nymph-list  nymphs with [attach = myself]]
+  ask medAnimals [set larvae-list larvae with [attach = myself]]
+  ask medAnimals [set nymph-list  nymphs with [attach = myself]]
+  ask medAnimals [set adult-list  adults with [attach = myself]]   
+  ; ask redfoxes [set adult-list  adults with [attach = myself]]
+  ; ask redfoxes [set adult-list  adults with [attach = myself]]
+  ask smAnimals [if larvae-list != 0[ set larval-infestation (count larvae-list) ]]
+  ask smAnimals [ if nymph-list != 0[ set nymphal-infestation (count nymph-list)]]
+    ask medAnimals [if larvae-list != 0[ set larval-infestation (count larvae-list) ]]
+  ask medAnimals [ if nymph-list != 0[ set nymphal-infestation (count nymph-list)]]
+  ask medAnimals [if adult-list != 0[ set adult-infestation (count adult-list) ]]
+    ask lgAnimals [if adult-list != 0[ set adult-infestation (count adult-list) ]]
+end
+
+;;tick catching and attaching to host
+
+;;;;;ticks that host larva will become infected by larvae;;;;;;
+
+to sm-catch-larvae
+  
+ask bugs in-radius 1 with [lifeStage = "larva" and attach = nobody and status = "questing"]  ; ask larvae that are on the same patch as the host to attach and feed
+    [ if RanGen < 0.103726853 [set attach myself set status "feeding" 
+     ]];; identify the host the tick feed on
+   
+   end
+
+
+to sm-catch-nymphs
+  ask bugs in-radius 1 with [lifeStage = "nymph" and attach = nobody and status = "questing"] ; ask nymphs that are on the same patch as the host to attach and feed
+    [if RanGen  < 0.16788807 [set attach myself set status "feeding" 
+        ]] ;; identify the host the tick feed on
+     
+    end
+
+to med-catch-larvae
+    
+  ask bugs in-radius 2 with [lifeStage = "larva" and attach = nobody and status = "questing"]  ; ask larvae that are on the same patch as the host to attach and feed
+    [ if random-float 1 < 0.103726853 [set attach myself set status "feeding" 
+     ]];; identify the host the tick feed on
+   
+   end
+
+
+to med-catch-nymphs
+     ask bugs in-radius 2 with [lifeStage = "nymph" and attach = nobody and status = "questing"] ; ask nymphs that are on the same patch as the host to attach and feed
+    [if RanGen < 0.16788807 [set attach myself set status "feeding" 
+      ]] ;; identify the host the tick feed on
+     
+    end
+
+to med-catch-adults
+    ask bugs in-radius 5 with [lifeStage = "adult" and attach = nobody and status = "questing"] [ ; ask adults that are on the same patch as the host to attach and feed
+    if RanGen  < 0.011786875 [set attach myself set status "feeding" 
+      ]] ;; identify the host the tick feed on
+   
+ end
+
+to lg-catch-adults
+    ask bugs in-radius 5 with [lifeStage = "adult" and attach = nobody and status = "questing"] [ ; ask adults that are on the same patch as the host to attach and feed
+    if RanGen  < 0.11786875 [set attach myself set status "feeding" 
+      ]] ;; identify the host the tick feed on
+   
+ end
+
+
+
+
+
+
+
+
+
+

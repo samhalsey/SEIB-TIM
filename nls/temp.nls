@@ -1,0 +1,141 @@
+globals
+[
+  refmaxtemp ; list of mean max temperatures each line in the state.nls is a days temp
+  refsdmaxtemp ;list of sd of max temperatures each line in the state.nls is a days temp
+  refmintemp ; list of min temperatures each line in the state.nls is a days temp
+  refsdmintemp ; list of sd of min temperatures each line in the state.nls is a days temp
+  hour ;; hour of the day 1-24
+  day;; day of the month 1-31ish
+  month;; month of the year Jan-Dec
+  year ;; self explanatory
+  monthday ;; 1-364 or 365 can't remember if leap years are included
+  tt ;; Total number of time ticks, replace with netlogo standard "ticks" do not increment
+]
+
+patches-own
+[
+  Avgpreovi
+  CMDD
+  DD
+  maxT
+  MinT
+  moving-dd
+  preovi
+  preoviarr
+ 
+]; list of last 7 days, 168 ticks ]
+
+;;;;;;;setup procedure;;;;;;
+to set-world
+  state-setting ;; what state are we in, currently only two available
+  set start-time time:create "2010-1-01 0"
+  set current-time time:anchor-to-ticks start-time 1 "hours"
+  ask patches
+  [
+    set pcolor green
+    set moving-dd []
+    set preoviarr []
+    set translarvae 0
+    set transtime 0
+    set questtime 0
+    set dormanttime 0
+    set eggnum 0
+    set larvaeQ 0
+    set TLarvae? false
+    set QLarvae? false
+    set DLarvae? false
+  ]
+end
+
+;;;;;;;runtime procedure;;;;;;;
+to pull-temp ; move time and pull temperature according to that time
+  move-time
+  if hour = 1
+  [
+    get-temp
+    add-to-moving-dd
+    add-to-preoviarr
+    get-average
+    average-preov
+    calculate-moving-dd
+  ]
+end
+
+;;;;;;;move time;;;;;;;
+
+to move-time  ;; as time goes on by the hour
+  set hour time:get "hour" current-time
+  set month time:get "month" current-time
+  set day time:get "day" current-time
+  set year time:get "year" current-time
+  set monthday time:get "dayofyear" current-time
+  set tt tt + 1 ;; Sam Need this to ensure that the degree day arrays are correct or else the code doesn't work
+end
+
+
+to get-temp ;; pull temperature from the state.nls and add to each patch for hour 1 of each day
+   ask patches
+   [
+     set maxT random-normal (array:item refmaxtemp (monthday - 1)) (array:item refsdmaxtemp (monthday - 1));;normal distribution draw random number from mean standard deviation
+     set minT random-normal (array:item refmintemp (monthday - 1)) (array:item refsdmintemp (monthday - 1));;normal distribution draw random number from mean standard deviation
+     set DD (((maxT + minT) / 2)- 6) ; calucate the degree day for the day
+   ]
+end
+
+
+;; EVAN: Checking tt like this cuts down on the number of steps the program executes ## SAM was not working right. Did not only hold 7 days so i reverted to orginal code
+
+to add-to-moving-dd ;; add degreeday to the degreeday array, removing the oldest day
+ ask patches [
+   ifelse (tt < 169) ;; tt 168 equal 7 days, only remove oldest day after reaching 7 days
+   [ 
+   set moving-dd lput DD moving-dd
+   ]
+   [
+   set moving-dd but-first moving-dd 
+   set moving-dd lput DD moving-dd
+   ]]
+end
+
+
+
+to add-to-preoviarr ;; add the mean temp of the day to the preovi array 
+  if (tt >= 408) ;; tt=408 equals 17 days, only remove oldest day after reaching 17 days
+  [
+    ask patches
+    [
+      set preoviarr but-first preoviarr
+    ]
+  ]
+  ask patches
+  [
+    set preoviarr lput preovi preoviarr
+  ]
+end
+
+
+to get-average ;;obtain the average temp of the day
+  ask patches
+  [
+    set preovi ((maxt + mint) / 2)
+  ]
+end   
+
+
+to average-preov ;; calculate the avergae preoviposition period over the 17 days the female tick is preparing to lay eggs
+  if (tt > 40)
+  [
+    ask patches
+    [
+      set AvgPreOvi (mean preoviarr)
+    ]
+  ]
+end   
+
+
+to calculate-moving-dd ;; calculate a moving sum of the last 7 days degreedays
+  ask patches
+  [
+    set CMDD (sum moving-DD)
+  ]
+end

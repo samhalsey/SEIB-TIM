@@ -1,0 +1,31 @@
+to grooming ;;; ticks are groomed of based on the groomming rate of the host they are attached to, 80% die, 20% survive to resume questing
+if month >= 6 [ if month <= 10[
+    ask larvae[
+   if ( status = "feeding" and random-float 1 < [groom] of attach and random-float 1 > 0.2)
+    [die] ]
+ask larvae [ if ( status = "feeding" and random-float 1 < [groom] of attach and random-float 1 < 0.2)
+    [ move-to attach 
+      set droppoint patch-here 
+      set attach nobody 
+      set status  "questing"]   ] ]]
+if month >= 4 [ if month <= 8[
+    ask nymphs[
+   if ( status = "feeding" and random-float 1 < [groom] of attach and random-float 1 > 0.2)
+    [die] ]
+ask nymphs [ if ( status = "feeding" and random-float 1 < [groom] of attach and random-float 1 < 0.2)
+    [ move-to attach 
+      set droppoint patch-here 
+      set attach nobody 
+      set status  "questing"]   ] ]]
+if month >= 4 [ if month <= 12[
+    ask adults[
+   if ( status = "feeding" and random-float 1 < [groom] of attach and random-float 1 > 0.2)
+    [die] ]
+ask adults [ if ( status = "feeding" and random-float 1 < [groom] of attach and random-float 1 < 0.2)
+    [ move-to attach 
+      set droppoint patch-here 
+      set attach nobody 
+      set status  "questing"]   ] ]]
+end
+
+

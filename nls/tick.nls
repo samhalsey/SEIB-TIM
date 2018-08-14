@@ -1,0 +1,141 @@
+
+patches-own
+[
+  eggnum
+  translarvae
+  transtime
+  Tlarvae?
+  questlarvae
+  questtime
+  Qlarvae?
+  dormantlarvae
+  dormanttime
+  Dlarvae?
+  larvaeQ
+  addlarvae
+]
+
+globals
+[
+  eggmast
+  larvae
+  nymphs
+  adults
+]
+
+breed [bugs bug]
+bugs-own[
+  Ahost
+  attach
+  cmddThreshold
+  dormant?
+  dropped?
+  droppoint
+  feedtm
+  female?
+  hatchtm
+  host
+  infectionTime ;; length of time to be feeding in order to be infected by host
+  Lhost
+  lifespan
+  lifeStage
+  molttm
+  molttmThreshold
+  Nhost
+  replete?
+  preov 
+  preovarr
+  questrange
+  status
+  Tinfected?
+  RanGen
+ 
+]
+
+
+to setup-ticks 
+  ;;;create larvae ticks NOT infected with Lyme disease Pathogen
+  create-bugs initial-number-larvae[
+    setup-new-larva true
+  ]
+  
+  ;;;create Adult ticks NOT infected with Lyme disease Pathogen
+  create-bugs initial-number-adults[
+    setup-new-adult true
+  ]
+  
+  ;;;create larvae ticks infected with Lyme disease Pathogen
+  create-bugs initial-number-infected-larvae[
+    setup-new-larva true
+    set Tinfected? true
+  ]
+  
+  reset-bug-sets
+end
+
+to reset-bug-sets
+  set larvae bugs with [lifeStage = "larva"]
+  set nymphs bugs with [lifeStage = "nymph"]
+  set adults bugs with [lifeStage = "adult"]
+end
+
+
+to set-new-bug-vals [ move? ]
+  if move? = true[
+    setxy random-xcor random-ycor
+  ]
+  set attach nobody ;; Sam add or else feeding is happenning when there is no feeding
+  set dormant? true
+  set status "dormant"
+  set Tinfected? false
+  if dropped? != true[
+    set droppoint patch-here
+    set dropped? true
+    
+  ]
+  set replete? true  
+end
+
+
+to setup-new-larva [ move? ] 
+  set shape "larva"
+  set color orange
+  set size .4
+  set lifeStage "larva"
+  set lifespan 4320
+  set molttmThreshold 168
+  set cmddThreshold 58
+  set infectionTime 71
+  
+  set-new-bug-vals move?
+end
+
+
+to setup-new-nymph [ move? ]
+  set shape "larva"
+  set color orange
+  set size .6
+  set lifeStage "nymph"
+  set molttmThreshold 168
+  set cmddThreshold 58
+  set infectionTime 119
+  
+  set-new-bug-vals move?
+end
+
+
+to setup-new-adult [ move? ]
+  set shape "adult"
+  set color black
+  set size .8
+  set lifeStage "adult"
+  set lifespan 2160
+  set female? true ;Sam These are all females who survived the winter and are ready to lay eggs when it is warmer
+  set molttmThreshold 336
+  set cmddThreshold 58
+  set infectionTime 119
+  
+  set-new-bug-vals move?
+end
+
+

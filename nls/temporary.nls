@@ -1,0 +1,94 @@
+ 
+ 
+ ;;;;;;;setup procedure;;;;;;
+to setup
+  clear-all
+  
+ask patches [ set season season-start  set hour 1 set day 181 set year 0 set pcolor green
+  ;ifelse season = "Spring" [set pcolor green] [set pcolor orange]
+   ]
+
+
+
+
+
+reset-ticks
+
+end
+
+;;;;;;;runtime procedure;;;;;;;
+to go
+
+ ask larvae[ move-larvae ]
+ ask nymphs [move-nymphs ]
+ ask adults [move-adults ]
+ 
+ ;;CATCH LARVA, NYMPHS, Adults
+  
+   
+
+    ask deer [ if status = "alive" [catch-adults]    ]     
+    
+ ;;FEED ticks
+   feed-larvae feed-nymphs feed-adults
+ ;;DETACH ticks in new location
+   detach-larvae detach-nymphs detach-adults
+   awaken-larvae awaken-adults lay-adults
+   incubate-larvae incubate-nymphs incubate-eggs
+   molt-eggs molt-larvae molt-nymphs 
+   female-adult-reproduce 
+
+ ; if ticks > 21160 [stop]
+end
+
+
+
+;;;;;;;move time;;;;;;;
+
+
+
+
+
+;;;;;;;;;;;move procedure;;;;;;;;;;;;;;;;
+
+to move-larvae
+   if-else droppoint != no-patches[if distance droppoint > .1
+    [ face droppoint]
+  ] []
+     rt random 90
+  fd .10
+  set lifespan lifespan + 1
+end
+
+to move-nymphs
+   if-else droppoint != no-patches[if distance droppoint > .2
+    [ face droppoint]
+  ] []
+    
+  rt random 90
+  fd .20
+  set lifespan lifespan + 1
+end
+
+to move-adults
+ if-else droppoint != no-patches[if distance droppoint > .4
+    [ face droppoint]
+  ] []
+    
+  rt random 90
+  fd .40
+  set lifespan lifespan + 1
+end
+ 
+
+
+
+;;;;;;;attachments
+  
+
+
+
+
+
+
+

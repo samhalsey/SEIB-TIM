@@ -1,0 +1,47 @@
+;;;;;;;;White-tailed Deer;;;;;;;;;
+breed [deer a-deer]
+deer-own[
+  lifespan
+  adult-infestation
+  homerange
+  my-base
+  status
+  BR
+  groom
+  HR
+  RC
+  infested?
+  adult-list
+]
+
+to setup-deer
+  set-default-shape deer "deer"
+  create-deer initial-number-deer[
+    set color brown
+    set size 5
+    set infested? false
+    set groom 0.00353197271935642
+    set adult-infestation 0
+    setxy random-xcor random-ycor
+    set status "alive"
+    set homerange patches in-radius (100) ;; Need to adjust homerange
+    set RC 0
+    set my-base patch-here
+  ]
+end ;;center of homerange
+
+to deer-movements
+  ask deer[
+    move-deer
+  ]
+  ask deer[
+    if adult-infestation < 100[
+      catch-adults
+    ]
+  ]
+end ;; deer wont be infested with more than 100 ticks at a time
+ 
+to move-deer ;within home range ;;not relevant when entire space is only 1 hectare
+   rt random 360
+   fd 10
+end

@@ -1,0 +1,51 @@
+
+;; Redfox
+breed [redfoxes redfox]
+redfoxes-own[
+  lifespan
+  status
+  BR
+  homerange
+  HR
+  my-base
+] 
+
+to setup-redfoxes
+  set-default-shape redfoxes "redfox top"  
+  create-redfoxes initial-number-redfoxes[
+    set color red
+    set size 4
+    set BR "redfox"
+    setxy random-xcor random-ycor
+    set status "alive" 
+    set HR (427.8179 + random-float 1135.71) ;;home range size
+    set homerange patches in-radius (HR)
+    set my-base patch-here ;;; center of homerange
+  ]
+end
+
+;move host and eat small mammals
+to redfox-movements
+  ask redfoxes [ move-redfox ]
+end
+
+;within specified home range (HR)
+  
+      
+; At the start of each day, the coyote will choose a direction to walk in for the day loosely following an edge line.
+; If the coyote senses any number of turkeys in a neighboring patch, it will go in and kill all turkeys and nests on that patch.
+;    ( This can change to just one turkey by changing the code below ";>>>>>" )
+; If the coyote does not sense a turkey in a neighboring patch, they will move forward once in their chosen direction for the day.
+; The coyote stops moving for the day if they have eaten a turkey or if they have moved more than the coyote-owned variable of movesPerDay ( equal to 15 patches )
+; EVAN: I WROTE THE COMMENTS ABOVE!! :D ^ This was for Jaime's project.
+to move-redfox
+    if distance my-base > HR [ face my-base ]
+    rt random 360
+    fd 10
+end
+
+;to catch-prey
+ ;  ask mice in-radius 1 
+  ;[die]
+   
+;end

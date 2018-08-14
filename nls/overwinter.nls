@@ -1,0 +1,23 @@
+;;for ticks to overwinter. Larva and adults need to after feeding to completion
+to Over-winter
+  if month > 4 [;; when the temperature of your patch gets below cmdd 58, become dormant, basically fall weather
+  ask bugs[
+    if (cmdd < cmddThreshold and status = "questing")[
+        set dormant? true
+        set status "dormant"
+        set hidden? true
+      ]
+    
+  ]
+  ask patches[ 
+    if (cmdd < 58 and Qlarvae? = true)
+    [set Dlarvae? true
+    set dormantlarvae questlarvae
+    set dormanttime questtime
+    set questlarvae 0 set questtime 0] set Qlarvae? false
+    ]
+  ]
+end
+    
+    
+  

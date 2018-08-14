@@ -1,0 +1,228 @@
+
+to develop
+  ask turtles [set lifespan lifespan + 1]
+  if month >= 4[ 
+  eggs-to-larvae
+  quest-larvae
+  harden-cuticle
+  start-questing
+  incubate-nymphs
+  larvae-to-nymph
+  nymph-to-adult
+  preoviposition
+  female-adult-reproduce
+  Over-winter
+  awaken-adults
+  awaken-larvae
+  awaken-nymphs
+  reset-bug-sets ]; move this so that updating the agent set only happens after every tick has finished developing or else it needs to occur after each procedure
+  Naturally-Die
+end
+;;translarvae
+;;;;;incubate;;;;
+to eggs-to-larvae
+  ;eggs are patch variables, if the patch is the right temperature then the eggs will become larvae on that patch
+ if month <= 9 [
+ if state = "Connecticut"   
+  [ask patches[
+     if (cmdd > 120 and transtime = 0) [  ;  7 day molting time before larvae hatch
+      set translarvae eggnum
+      set Tlarvae? true
+      set transtime transtime + 1
+      set eggnum 0]
+    
+    if transtime = 504[ ;; the setup-new-larvae doesn't work 
+      set questlarvae translarvae
+      set Qlarvae? true
+       set translarvae 0]
+    ]]
+  
+   if state = "Wisconsin"   
+  [ask patches[
+     if (cmdd > 110 and transtime = 0) [  ;  7 day molting time before larvae hatch
+      set translarvae eggnum
+      set Tlarvae? true
+      set transtime transtime + 1
+      set eggnum 0 ]
+    
+    if transtime = 504[ ;; the setup-new-larvae doesn't work 
+      set questlarvae translarvae
+       set Qlarvae? true
+       set translarvae 0]
+    ]]
+ ]
+ ask patches [if Tlarvae? = true [set transtime transtime + 1]]
+ ask patches [if Qlarvae? = true [set questtime questtime + 1]]
+ask patches [if Dlarvae? = true [set dormanttime dormanttime + 1]]
+ ask patches[  if maxt < 6[ ;; WHERE DOES THIS FIT? ;; eggs dies below the crtiical threshold
+      set eggnum 0 set translarvae 0 set questlarvae 0 set Tlarvae? false set Qlarvae? false set Dlarvae? false
+  ]]
+end
+
+to quest-larvae
+  
+  ask patches with [Qlarvae? = true] [
+    set larvaeQ (count bugs-here with [lifeStage = "larva"]) 
+    if questlarvae != 0[ if larvaeQ < 300 [ set addlarvae (300 - larvaeQ)
+   set questlarvae (questlarvae - addlarvae )
+      sprout-bugs (addlarvae)[  
+        set lifeStage "larva"
+        set status "questing"
+        set lifespan questtime
+        set attach nobody
+        set molttm 0
+        set dormant? false
+        set molttmThreshold 168
+        set cmddThreshold 58
+        set infectionTime 71
+        set replete? false
+        set Tinfected? false 
+        set RanGen random-float 1
+        set droppoint patch-here 
+        set shape "larva" 
+        set size .4
+      ] 
+    ]]if questlarvae < 0 [set questlarvae 0 set Qlarvae? false]]
+end
+
+to larvae-to-nymph ;; if its the right temperature larvae will become nymphs
+
+  ask larvae[
+    if (cmdd > 58  and lifespan > 6570 and status = "dormant" and dormant? = true )[
+      set lifeStage "nymph"
+      set status "trans"
+      set attach nobody
+      set lifespan 0
+      set molttm 0
+      set molttmThreshold 168
+      set cmddThreshold 58
+      set infectionTime 119
+      set dormant? false
+      set RanGen random-float 1
+      set droppoint patch-here 
+      set shape "larva" 
+      set size .4
+    ]
+  ] 
+ 
+end
+
+
+to awaken-adults ;; awaken dormant adults from overwintering
+  ask adults[
+    if (cmdd > 28  and lifespan > 2880 and dormant? = true)
+    [  set dormant? false
+      if (status = "dormant" and replete? = false)[
+        set status "questing"        
+      ]
+    ]
+  ]
+end
+
+
+to awaken-larvae ;;awaken any dormant juvenile ticks so they can resume questing for blood meal
+ask larvae[
+    if (cmdd > 110 and lifespan > 4320 and dormant? = true and status = "dormant")[
+      set dormant? false
+      set status "questing"
+      set hidden? false
+    ]
+  ]
+ask patches [if cmdd > 110 and Dlarvae? = true [set questlarvae (questlarvae + dormantlarvae) set questtime (questtime + dormanttime)
+     set dormantlarvae 0 set dormanttime 0 set Dlarvae? false]]
+end
+ to awaken-nymphs
+  ask nymphs[
+    if (cmdd > 58 and lifespan > 4320 and dormant? = true and status = "dormant")[
+      set dormant? false
+      set status "questing"
+      set hidden? false
+    ]
+  ]
+end
+
+
+to incubate-nymphs;; nymphs time to develop into adults
+  ask nymphs[
+    if (molttm < 2160  and replete? = true)[
+      set molttm molttm + 1
+    ]
+  ]
+end
+
+
+to nymph-to-adult ;; nymphs actually becoming adults
+   ask nymphs[
+     if (cmdd > 81 and molttm >= 2160 and replete? = true)[
+      set lifeStage "adult"
+      set shape "adult"
+       set status "trans"
+       set lifespan 0
+       set dormant? false     
+       set replete? false
+       set molttm 0
+       set molttmThreshold 336
+       set cmddThreshold 0
+       set infectionTime 119
+       set RanGen random-float 1
+       ;;assign 50/50 sex of adult ticks
+       ifelse random-float 1 > 0.5[
+         set female? true
+       ] [set female? false]
+     ]
+   ]
+
+end
+
+
+to preoviposition;; female ticks get ready to lay eggs
+  ask adults[
+    if(cmdd > 28 and female? = true and status = "dormant" and replete? = true and dormant? = false )[
+      set status "preoviposition"
+      set preov 0 
+    ]
+  ]
+  ask adults[
+    if status = "preoviposition"[
+      set preov preov + 1
+      set preovarr (mean preoviarr)
+    ]
+  ] 
+end
+
+
+to harden-cuticle ;; asking all tick turtles to harden their cuticle
+ask bugs[
+    if status = "trans"[
+      set molttm molttm + 1
+    ]
+  ]
+end
+
+
+to start-questing ; once time has passed 1 week for larvae & nymphs and 2 weeks for adult, ticks start questing
+ask bugs[
+    if (molttm >= molttmThreshold and status = "trans")[
+      set status "questing"
+    ]
+  ]
+end
+
+
+to female-adult-reproduce ;; female ticks lay the number of eggs as determined by preoviposition
+  ask adults[
+    if (status = "preoviposition" and preov = 408)[
+      set eggnum (-24.6 * (preovarr ^ 2) + 836 * (preovarr) - 4106 )
+      set transtime 0
+      die
+    ]
+  ]
+end
+
+to Gen-Ran
+ask bugs[
+    set RanGen random-float 1]
+  
+end
+
+ 

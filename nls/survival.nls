@@ -1,0 +1,86 @@
+;;Hourly survival rate for each life stage 
+;;40 weeks equals 6720 hrs as lifespan, resets with each molting event
+
+to Naturally-Die
+  ;;egg death
+  ;;egg mortality;; reduces the # of egg that will sprout from each patch
+  ask patches[
+    set eggnum (eggnum - (eggnum * 0.00003017683 ))
+    set translarvae (translarvae - (translarvae * 0.00003017683))
+    set questlarvae (questlarvae - (questlarvae * 0.0002134725))
+    set dormantlarvae (dormantlarvae - (dormantlarvae * 0.0002134725))
+  ]
+  
+  ;;larvae death
+  ask larvae[
+    if lifespan >= 8760 [die] ;;max lifespan of larval ticks ;SAM changed to greater than, all my larvae died instantly
+   ; if ( status = "trans")[
+      ;;probability of dying while you are waiting to officially become a larve, same rate as eggs??
+    ;  if random-float 1 <= 0.00003017683 [die]
+    ;]
+    
+    ifelse replete? = true[
+      ;;probability of dying AFTER 40 weeks if you HAVE fed
+      if random-float 1 <= 0.0001317776 [die]
+    ][
+      if status = "questing"[
+        ifelse (lifespan <= 6720)[
+          ;;probability of dying BEFORE 40 weeks if you have NOT fed
+          if random-float 1 <= 0.0002134725 [die]
+        ][
+          ;;probability of dying AFTER 40 weeks if you have NOT fed
+          if random-float 1 <= 0.005171429 [die]
+        ]
+      ]
+    ]
+  ]
+  
+  
+  ;nymph death
+  ask nymphs[
+    if lifespan >= 8760 [die]
+    ifelse replete? = true[
+      ;;probability of dying after 40 weeks if you HAVE fed
+      if random-float 1 < 0.0000958566 [die]
+    ][
+      if status = "questing"[
+        ifelse lifespan < 6720[
+          ;;probability of dying before 40 weeks if you have NOT fed
+          if random-float 1 <= 0.0000031586 [die]
+        ][
+          ;;probability of dying after 40 weeks if you have NOT fed
+          if random-float 1 <= 0.000363855 [die]
+        ]
+      ]
+    ]
+  ]
+  
+  
+  ;;adult death
+  ask  adults[
+    ;; male ticks die presumely after copulation
+    if (female? = false) [die]
+    ;;max lifespan of adult ticks
+    if (cmdd > 110  and lifespan > 6720) [die]
+    
+    if status = "questing"[
+      if replete? = false[
+        ifelse lifespan < 6720[
+          ;;probability of dying before 40 weeks if you have NOT fed
+          if random-float 1 < 0.0000001833[die]
+        ][
+        ;;probability of dying after 40 weeks if you have NOT fed
+        if random-float 1 < 0.0003608803 [die]
+        ]
+      ]
+    ]
+    
+    if  replete? = true[
+      ;;probability of dying after 40 weeks if you HAVE fed
+      if random-float 1 < 0.0000912404 [die]
+    ]
+  ]
+End
+    
+    
+  

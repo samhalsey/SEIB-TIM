@@ -1,0 +1,6 @@
+to file-outputreplete
+ file-open (word"../TIM/Repleteticks3.csv")
+if hour = 1
+      [file-print (word  monthday "," repleteL","repleteN ","repleteA","larvaeprev"," nymphprev"," adultprev","year )]
+ file-close
+End

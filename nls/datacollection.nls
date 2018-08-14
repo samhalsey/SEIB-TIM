@@ -1,0 +1,1814 @@
+
+
+To data-collect-year-1
+
+;;;;YEAR 1 after 2 year burnin
+if (year = 2012)[
+ ;;;April
+if (month = 4 and day = Y1-apr-SW1) 
+[set mice-nymph-Y1-apr-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y1-apr-SW1-prev(count mice with [nymphal-infestation > 0])
+
+set quest-larvae-Y1-apr-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y1-apr-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y1-apr-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y1-apr-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+
+]
+
+
+ ;;May
+ if (month = 5 and day = Y1-may-SW1) 
+[set mice-nymph-Y1-may-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y1-may-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y1-may-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y1-may-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y1-may-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y1-may-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;June
+if (month = 6 and day = Y1-jun-SW1) 
+[set mice-nymph-Y1-jun-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y1-jun-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y1-jun-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y1-jun-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y1-jun-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y1-jun-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+ 
+;;July
+if (month = 7 and day = Y1-jul-SW1) 
+[set mice-nymph-Y1-jul-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y1-jul-SW1-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y1-jul-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y1-jul-SW1-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y1-jul-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y1-jul-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y1-jul-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y1-jul-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;August
+
+if (month = 8 and day = Y1-aug-SW1) 
+[set mice-larvae-Y1-aug-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y1-aug-SW1-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y1-aug-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y1-aug-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y1-aug-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+;;;September
+if (month = 9 and day = Y1-sep-SW1) 
+[set mice-larvae-Y1-sep-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y1-sep-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y1-sep-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y1-sep-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y1-sep-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y1-sep-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y1-sep-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+;;October
+if (month = 10 and day = Y1-oct-SW1) 
+[set mice-larvae-Y1-oct-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y1-oct-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y1-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] )  
+ set deer-adult-Y1-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y1-oct-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y1-oct-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y1-oct-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y1-oct-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+
+;;;nov
+ 
+if (month = 11 and day = Y1-nov-SW1) 
+ [set deer-adult-Y1-nov-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y1-nov-SW1-prev(count deer with [adult-infestation > 0])
+set quest-larvae-Y1-nov-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y1-nov-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y1-nov-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+ ]
+
+;;;;;;second month sampling
+
+;;;April
+if (month = 4 and day = Y1-apr-SW2) 
+[set mice-nymph-Y1-apr-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+ set mice-nymph-Y1-apr-SW2-prev(count mice with [nymphal-infestation > 0])
+ set quest-larvae-Y1-apr-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y1-apr-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y1-apr-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y1-apr-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+]
+
+;;May
+ if (month = 5 and day = Y1-may-SW2) 
+[set mice-nymph-Y1-may-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y1-may-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y1-may-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y1-may-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y1-may-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y1-may-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+]
+
+;;June
+if (month = 6 and day = Y1-jun-SW2) 
+[set mice-nymph-Y1-jun-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y1-jun-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y1-jun-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y1-jun-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y1-jun-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+;;July
+if (month = 7 and day = Y1-jul-SW2) 
+[set mice-nymph-Y1-jul-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y1-jul-SW2-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y1-jul-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y1-jul-SW2-prev(count mice with [larval-infestation > 0])
+set quest-nymph-Y1-jul-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y1-jul-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y1-jul-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+]
+
+;;August
+
+if (month = 8 and day = Y1-aug-SW2) 
+[set mice-larvae-Y1-aug-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y1-aug-SW2-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y1-aug-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y1-aug-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y1-aug-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+ ]
+
+;;;Septmber
+if (month = 9 and day = Y1-sep-SW2) 
+[set mice-larvae-Y1-sep-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y1-sep-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y1-sep-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y1-sep-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y1-sep-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y1-sep-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y1-sep-SW2(count bugs with [lifeStage = "adult" and status = "questing"])
+ ]
+
+;;October
+if (month = 10 and day = Y1-oct-SW2) 
+[set mice-larvae-Y1-oct-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y1-oct-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y1-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y1-oct-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y1-oct-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y1-oct-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y1-oct-SW2(count bugs with [lifeStage = "adult" and status = "questing"])
+set deer-adult-Y1-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y1-oct-SW2-prev (count deer with[adult-infestation > 0])
+ set quest-larvae-Y1-oct-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y1-oct-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y1-oct-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+;;;nov
+ 
+if (month = 11 and day = Y1-nov-SW2) 
+ [set deer-adult-Y1-nov-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y1-nov-SW2-prev (count deer with[adult-infestation > 0])
+set quest-larvae-Y1-nov-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y1-nov-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y1-nov-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+
+]
+]
+end
+
+to data-collect-year-2
+
+
+
+;;;;YEAR 2 after two year burnin
+if (year = 2013)[
+ ;;;April
+if (month = 4 and day = Y2-apr-SW1) 
+[set mice-nymph-Y2-apr-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y2-apr-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y2-apr-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y2-apr-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y2-apr-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y2-apr-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+
+]
+
+
+ ;;May
+ if (month = 5 and day = Y2-may-SW1) 
+[set mice-nymph-Y2-may-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y2-may-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y2-may-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y2-may-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y2-may-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y2-may-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;June
+if (month = 6 and day = Y2-jun-SW1) 
+[set mice-nymph-Y2-jun-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y2-jun-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y2-jun-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y2-jun-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y2-jun-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y2-jun-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+ 
+;;July
+if (month = 7 and day = Y2-jul-SW1) 
+[set mice-nymph-Y2-jul-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y2-jul-SW1-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y2-jul-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y2-jul-SW1-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y2-jul-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y2-jul-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y2-jul-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y2-jul-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;August
+
+if (month = 8 and day = Y2-aug-SW1) 
+[set mice-larvae-Y2-aug-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y2-aug-SW1-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y2-aug-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y2-aug-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y2-aug-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;September
+if (month = 9 and day = Y2-sep-SW1) 
+[set mice-larvae-Y2-sep-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y2-sep-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y2-sep-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y2-sep-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y2-sep-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y2-sep-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y2-sep-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+;;October
+if (month = 10 and day = Y2-oct-SW1) 
+[set mice-larvae-Y2-oct-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y2-oct-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y2-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] )  
+set deer-adult-Y2-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y2-oct-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y2-oct-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y2-oct-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y2-oct-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;nov
+ 
+if (month = 11 and day = Y2-nov-SW1) 
+ [set deer-adult-Y2-nov-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y2-nov-SW1-prev(count deer with [adult-infestation > 0])
+set quest-larvae-Y2-nov-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y2-nov-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y2-nov-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+ ]
+;;;;;;second month sampling
+
+;;;April
+if (month = 4 and day = Y2-apr-SW2) 
+[set mice-nymph-Y2-apr-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+ set mice-nymph-Y2-apr-SW2-prev(count mice with [nymphal-infestation > 0])
+ set quest-larvae-Y2-apr-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y2-apr-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y2-apr-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y2-apr-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+]
+
+;;May
+ if (month = 5 and day = Y2-may-SW2) 
+[set mice-nymph-Y2-may-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y2-may-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y2-may-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y2-may-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y2-may-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y2-may-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;June
+if (month = 6 and day = Y2-jun-SW2) 
+[set mice-nymph-Y2-jun-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y2-jun-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y2-jun-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y2-jun-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y2-jun-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y2-jun-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;July
+if (month = 7 and day = Y2-jul-SW2) 
+[set mice-nymph-Y2-jul-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y2-jul-SW2-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y2-jul-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y2-jul-SW2-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y2-jul-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y2-jul-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y2-jul-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y2-jul-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;August
+
+if (month = 8 and day = Y2-aug-SW2) 
+[set mice-larvae-Y2-aug-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y2-aug-SW2-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y2-aug-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y2-aug-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y2-aug-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+
+;;;Septmber
+if (month = 9 and day = Y2-sep-SW2) 
+[set mice-larvae-Y2-sep-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y2-sep-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y2-sep-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y2-sep-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y2-sep-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y2-sep-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y2-sep-SW2(count bugs with [lifeStage = "adult" and status = "questing"])
+]
+;;October
+if (month = 10 and day = Y2-oct-SW2) 
+[set mice-larvae-Y2-oct-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y2-oct-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y2-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y2-oct-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y2-oct-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y2-oct-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y2-oct-SW2(count bugs with [lifeStage ="adult" and status = "questing"])
+set deer-adult-Y2-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y2-oct-SW2-prev (count deer with[adult-infestation > 0])
+ set quest-larvae-Y2-oct-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y2-oct-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y2-oct-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+;;;nov
+ 
+if (month = 11 and day = Y2-nov-SW2)
+ [set deer-adult-Y2-nov-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y2-nov-SW2-prev (count deer with[adult-infestation > 0])
+set quest-larvae-Y2-nov-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y2-nov-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y2-nov-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+
+]]
+
+
+end
+
+to data-collect-year-3
+
+
+
+;;;;YEAR 3 after two year burnin
+if (year = 2014)[
+ ;;;April
+if (month = 4 and day = Y3-apr-SW1) 
+[set mice-nymph-Y3-apr-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y3-apr-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y3-apr-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y3-apr-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y3-apr-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y3-apr-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+
+]
+
+
+ ;;May
+ if (month = 5 and day = Y3-may-SW1) 
+[set mice-nymph-Y3-may-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y3-may-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y3-may-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y3-may-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y3-may-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y3-may-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;June
+if (month = 6 and day = Y3-jun-SW1) 
+[set mice-nymph-Y3-jun-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y3-jun-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y3-jun-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y3-jun-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y3-jun-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y3-jun-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+ 
+;;July
+if (month = 7 and day = Y3-jul-SW1) 
+[set mice-nymph-Y3-jul-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y3-jul-SW1-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y3-jul-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y3-jul-SW1-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y3-jul-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y3-jul-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y3-jul-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y3-jul-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;August
+
+if (month = 8 and day = Y3-aug-SW1) 
+[set mice-larvae-Y3-aug-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y3-aug-SW1-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y3-aug-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y3-aug-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y3-aug-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;September
+if (month = 9 and day = Y3-sep-SW1) 
+[set mice-larvae-Y3-sep-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y3-sep-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y3-sep-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y3-sep-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y3-sep-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y3-sep-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y3-sep-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+;;October
+if (month = 10 and day = Y3-oct-SW1) 
+[set mice-larvae-Y3-oct-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y3-oct-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y3-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] )  
+set deer-adult-Y3-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y3-oct-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y3-oct-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y3-oct-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y3-oct-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;nov
+ 
+if (month = 11 and day = Y3-nov-SW1) 
+ [set deer-adult-Y3-nov-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y3-nov-SW1-prev(count deer with [adult-infestation > 0])
+set quest-larvae-Y3-nov-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y3-nov-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y3-nov-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+ ]
+;;;;;;second month sampling
+
+;;;April
+if (month = 4 and day = Y3-apr-SW2) 
+[set mice-nymph-Y3-apr-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+ set mice-nymph-Y3-apr-SW2-prev(count mice with [nymphal-infestation > 0])
+ set quest-larvae-Y3-apr-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y3-apr-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y3-apr-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y3-apr-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+]
+
+;;May
+ if (month = 5 and day = Y3-may-SW2) 
+[set mice-nymph-Y3-may-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y3-may-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y3-may-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y3-may-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y3-may-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y3-may-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;June
+if (month = 6 and day = Y3-jun-SW2) 
+[set mice-nymph-Y3-jun-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y3-jun-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y3-jun-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y3-jun-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y3-jun-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y3-jun-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;July
+if (month = 7 and day = Y3-jul-SW2) 
+[set mice-nymph-Y3-jul-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y3-jul-SW2-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y3-jul-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y3-jul-SW2-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y3-jul-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y3-jul-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y3-jul-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y3-jul-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;August
+
+if (month = 8 and day = Y3-aug-SW2) 
+[set mice-larvae-Y3-aug-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y3-aug-SW2-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y3-aug-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y3-aug-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y3-aug-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+
+;;;Septmber
+if (month = 9 and day = Y3-sep-SW2) 
+[set mice-larvae-Y3-sep-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y3-sep-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y3-sep-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y3-sep-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y3-sep-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y3-sep-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y3-sep-SW2(count bugs with [lifeStage = "adult" and status = "questing"])
+]
+;;October
+if (month = 10 and day = Y3-oct-SW2) 
+[set mice-larvae-Y3-oct-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y3-oct-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y3-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y3-oct-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y3-oct-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y3-oct-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y3-oct-SW2(count bugs with [lifeStage ="adult" and status = "questing"])
+set deer-adult-Y3-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y3-oct-SW2-prev (count deer with[adult-infestation > 0])
+ set quest-larvae-Y3-oct-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y3-oct-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y3-oct-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+;;;nov
+ 
+if (month = 11 and day = Y3-nov-SW2)
+ [set deer-adult-Y3-nov-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y3-nov-SW2-prev (count deer with[adult-infestation > 0])
+set quest-larvae-Y3-nov-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y3-nov-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y3-nov-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+
+]]
+
+
+end
+
+to data-collect-year-4
+  
+
+
+
+;;;;YEAR 4 after two year burnin
+if (year = 2015)[
+ ;;;April
+if (month = 4 and day = Y4-apr-SW1) 
+[set mice-nymph-Y4-apr-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y4-apr-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y4-apr-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y4-apr-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y4-apr-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y4-apr-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+
+]
+
+
+ ;;May
+ if (month = 5 and day = Y4-may-SW1) 
+[set mice-nymph-Y4-may-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y4-may-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y4-may-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y4-may-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y4-may-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y4-may-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;June
+if (month = 6 and day = Y4-jun-SW1) 
+[set mice-nymph-Y4-jun-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y4-jun-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y4-jun-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y4-jun-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y4-jun-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y4-jun-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+ 
+;;July
+if (month = 7 and day = Y4-jul-SW1) 
+[set mice-nymph-Y4-jul-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y4-jul-SW1-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y4-jul-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y4-jul-SW1-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y4-jul-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y4-jul-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y4-jul-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y4-jul-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;August
+
+if (month = 8 and day = Y4-aug-SW1) 
+[set mice-larvae-Y4-aug-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y4-aug-SW1-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y4-aug-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y4-aug-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y4-aug-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;September
+if (month = 9 and day = Y4-sep-SW1) 
+[set mice-larvae-Y4-sep-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y4-sep-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y4-sep-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y4-sep-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y4-sep-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y4-sep-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y4-sep-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+;;October
+if (month = 10 and day = Y4-oct-SW1) 
+[set mice-larvae-Y4-oct-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y4-oct-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y4-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] )  
+set deer-adult-Y4-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y4-oct-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y4-oct-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y4-oct-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y4-oct-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;nov
+ 
+if (month = 11 and day = Y4-nov-SW1) 
+ [set deer-adult-Y4-nov-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y4-nov-SW1-prev(count deer with [adult-infestation > 0])
+set quest-larvae-Y4-nov-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y4-nov-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y4-nov-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+ ]
+;;;;;;second month sampling
+
+;;;April
+if (month = 4 and day = Y4-apr-SW2) 
+[set mice-nymph-Y4-apr-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+ set mice-nymph-Y4-apr-SW2-prev(count mice with [nymphal-infestation > 0])
+ set quest-larvae-Y4-apr-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y4-apr-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y4-apr-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y4-apr-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+]
+
+;;May
+ if (month = 5 and day = Y4-may-SW2) 
+[set mice-nymph-Y4-may-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y4-may-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y4-may-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y4-may-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y4-may-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y4-may-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;June
+if (month = 6 and day = Y4-jun-SW2) 
+[set mice-nymph-Y4-jun-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y4-jun-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y4-jun-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y4-jun-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y4-jun-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y4-jun-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;July
+if (month = 7 and day = Y4-jul-SW2) 
+[set mice-nymph-Y4-jul-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y4-jul-SW2-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y4-jul-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y4-jul-SW2-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y4-jul-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y4-jul-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y4-jul-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y4-jul-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;August
+
+if (month = 8 and day = Y4-aug-SW2) 
+[set mice-larvae-Y4-aug-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y4-aug-SW2-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y4-aug-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y4-aug-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y4-aug-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+
+;;;Septmber
+if (month = 9 and day = Y4-sep-SW2) 
+[set mice-larvae-Y4-sep-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y4-sep-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y4-sep-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y4-sep-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y4-sep-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y4-sep-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y4-sep-SW2(count bugs with [lifeStage = "adult" and status = "questing"])
+]
+;;October
+if (month = 10 and day = Y4-oct-SW2) 
+[set mice-larvae-Y4-oct-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y4-oct-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y4-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y4-oct-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y4-oct-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y4-oct-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y4-oct-SW2(count bugs with [lifeStage ="adult" and status = "questing"])
+set deer-adult-Y4-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y4-oct-SW2-prev (count deer with[adult-infestation > 0])
+ set quest-larvae-Y4-oct-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y4-oct-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y4-oct-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+;;;nov
+ 
+if (month = 11 and day = Y4-nov-SW2)
+ [set deer-adult-Y4-nov-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y4-nov-SW2-prev (count deer with[adult-infestation > 0])
+set quest-larvae-Y4-nov-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y4-nov-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y4-nov-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+
+]]
+
+
+end
+
+to data-collect-year-5
+
+
+
+;;;;YEAR 5 after two year burnin
+if (year = 2016)[
+ ;;;April
+if (month = 4 and day = Y5-apr-SW1) 
+[set mice-nymph-Y5-apr-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y5-apr-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y5-apr-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y5-apr-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y5-apr-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y5-apr-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+
+]
+
+
+ ;;May
+ if (month = 5 and day = Y5-may-SW1) 
+[set mice-nymph-Y5-may-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y5-may-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y5-may-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y5-may-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y5-may-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y5-may-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;June
+if (month = 6 and day = Y5-jun-SW1) 
+[set mice-nymph-Y5-jun-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y5-jun-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y5-jun-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y5-jun-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y5-jun-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y5-jun-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+ 
+;;July
+if (month = 7 and day = Y5-jul-SW1) 
+[set mice-nymph-Y5-jul-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y5-jul-SW1-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y5-jul-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y5-jul-SW1-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y5-jul-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y5-jul-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y5-jul-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y5-jul-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;August
+
+if (month = 8 and day = Y5-aug-SW1) 
+[set mice-larvae-Y5-aug-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y5-aug-SW1-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y5-aug-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y5-aug-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y5-aug-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;September
+if (month = 9 and day = Y5-sep-SW1) 
+[set mice-larvae-Y5-sep-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y5-sep-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y5-sep-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y5-sep-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y5-sep-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y5-sep-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y5-sep-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+;;October
+if (month = 10 and day = Y5-oct-SW1) 
+[set mice-larvae-Y5-oct-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y5-oct-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y5-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] )  
+set deer-adult-Y5-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y5-oct-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y5-oct-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y5-oct-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y5-oct-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;nov
+ 
+if (month = 11 and day = Y5-nov-SW1) 
+ [set deer-adult-Y5-nov-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y5-nov-SW1-prev(count deer with [adult-infestation > 0])
+set quest-larvae-Y5-nov-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y5-nov-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y5-nov-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+ ]
+;;;;;;second month sampling
+
+;;;April
+if (month = 4 and day = Y5-apr-SW2) 
+[set mice-nymph-Y5-apr-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+ set mice-nymph-Y5-apr-SW2-prev(count mice with [nymphal-infestation > 0])
+ set quest-larvae-Y5-apr-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y5-apr-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y5-apr-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y5-apr-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+]
+
+;;May
+ if (month = 5 and day = Y5-may-SW2) 
+[set mice-nymph-Y5-may-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y5-may-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y5-may-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y5-may-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y5-may-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y5-may-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;June
+if (month = 6 and day = Y5-jun-SW2) 
+[set mice-nymph-Y5-jun-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y5-jun-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y5-jun-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y5-jun-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y5-jun-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y5-jun-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;July
+if (month = 7 and day = Y5-jul-SW2) 
+[set mice-nymph-Y5-jul-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y5-jul-SW2-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y5-jul-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y5-jul-SW2-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y5-jul-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y5-jul-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y5-jul-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y5-jul-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;August
+
+if (month = 8 and day = Y5-aug-SW2) 
+[set mice-larvae-Y5-aug-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y5-aug-SW2-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y5-aug-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y5-aug-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y5-aug-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+
+;;;Septmber
+if (month = 9 and day = Y5-sep-SW2) 
+[set mice-larvae-Y5-sep-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y5-sep-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y5-sep-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y5-sep-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y5-sep-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y5-sep-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y5-sep-SW2(count bugs with [lifeStage = "adult" and status = "questing"])
+]
+;;October
+if (month = 10 and day = Y5-oct-SW2) 
+[set mice-larvae-Y5-oct-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y5-oct-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y5-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y5-oct-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y5-oct-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y5-oct-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y5-oct-SW2(count bugs with [lifeStage ="adult" and status = "questing"])
+set deer-adult-Y5-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y5-oct-SW2-prev (count deer with[adult-infestation > 0])
+ set quest-larvae-Y5-oct-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y5-oct-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y5-oct-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+;;;nov
+ 
+if (month = 11 and day = Y5-nov-SW2)
+ [set deer-adult-Y5-nov-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y5-nov-SW2-prev (count deer with[adult-infestation > 0])
+set quest-larvae-Y5-nov-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y5-nov-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y5-nov-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+
+]]
+
+
+end
+
+to data-collect-year-6
+
+
+
+;;;;YEAR 6 after two year burnin
+if (year = 2017)[
+ ;;;April
+if (month = 4 and day = Y6-apr-SW1) 
+[set mice-nymph-Y6-apr-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y6-apr-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y6-apr-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y6-apr-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y6-apr-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y6-apr-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+
+]
+
+
+ ;;May
+ if (month = 5 and day = Y6-may-SW1) 
+[set mice-nymph-Y6-may-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y6-may-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y6-may-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y6-may-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y6-may-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y6-may-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;June
+if (month = 6 and day = Y6-jun-SW1) 
+[set mice-nymph-Y6-jun-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y6-jun-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y6-jun-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y6-jun-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y6-jun-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y6-jun-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+ 
+;;July
+if (month = 7 and day = Y6-jul-SW1) 
+[set mice-nymph-Y6-jul-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y6-jul-SW1-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y6-jul-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y6-jul-SW1-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y6-jul-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y6-jul-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y6-jul-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y6-jul-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;August
+
+if (month = 8 and day = Y6-aug-SW1) 
+[set mice-larvae-Y6-aug-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y6-aug-SW1-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y6-aug-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y6-aug-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y6-aug-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;September
+if (month = 9 and day = Y6-sep-SW1) 
+[set mice-larvae-Y6-sep-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y6-sep-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y6-sep-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y6-sep-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y6-sep-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y6-sep-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y6-sep-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+;;October
+if (month = 10 and day = Y6-oct-SW1) 
+[set mice-larvae-Y6-oct-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y6-oct-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y6-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] )  
+set deer-adult-Y6-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y6-oct-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y6-oct-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y6-oct-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y6-oct-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;nov
+ 
+if (month = 11 and day = Y6-nov-SW1) 
+ [set deer-adult-Y6-nov-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y6-nov-SW1-prev(count deer with [adult-infestation > 0])
+set quest-larvae-Y6-nov-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y6-nov-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y6-nov-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+ ]
+;;;;;;second month sampling
+
+;;;April
+if (month = 4 and day = Y6-apr-SW2) 
+[set mice-nymph-Y6-apr-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+ set mice-nymph-Y6-apr-SW2-prev(count mice with [nymphal-infestation > 0])
+ set quest-larvae-Y6-apr-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y6-apr-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y6-apr-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y6-apr-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+]
+
+;;May
+ if (month = 5 and day = Y6-may-SW2) 
+[set mice-nymph-Y6-may-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y6-may-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y6-may-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y6-may-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y6-may-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y6-may-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;June
+if (month = 6 and day = Y6-jun-SW2) 
+[set mice-nymph-Y6-jun-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y6-jun-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y6-jun-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y6-jun-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y6-jun-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y6-jun-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;July
+if (month = 7 and day = Y6-jul-SW2) 
+[set mice-nymph-Y6-jul-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y6-jul-SW2-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y6-jul-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y6-jul-SW2-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y6-jul-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y6-jul-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y6-jul-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y6-jul-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;August
+
+if (month = 8 and day = Y6-aug-SW2) 
+[set mice-larvae-Y6-aug-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y6-aug-SW2-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y6-aug-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y6-aug-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y6-aug-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+
+;;;Septmber
+if (month = 9 and day = Y6-sep-SW2) 
+[set mice-larvae-Y6-sep-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y6-sep-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y6-sep-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y6-sep-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y6-sep-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y6-sep-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y6-sep-SW2(count bugs with [lifeStage = "adult" and status = "questing"])
+]
+;;October
+if (month = 10 and day = Y6-oct-SW2) 
+[set mice-larvae-Y6-oct-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y6-oct-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y6-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y6-oct-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y6-oct-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y6-oct-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y6-oct-SW2(count bugs with [lifeStage ="adult" and status = "questing"])
+set deer-adult-Y6-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y6-oct-SW2-prev (count deer with[adult-infestation > 0])
+ set quest-larvae-Y6-oct-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y6-oct-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y6-oct-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+;;;nov
+ 
+if (month = 11 and day = Y6-nov-SW2)
+ [set deer-adult-Y6-nov-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y6-nov-SW2-prev (count deer with[adult-infestation > 0])
+set quest-larvae-Y6-nov-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y6-nov-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y6-nov-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+
+]]
+
+
+end
+
+to data-collect-year-7
+
+
+
+;;;;YEAR 7 after two year burnin
+if (year = 2018)[
+ ;;;April
+if (month = 4 and day = Y7-apr-SW1) 
+[set mice-nymph-Y7-apr-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y7-apr-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y7-apr-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y7-apr-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y7-apr-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y7-apr-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+
+]
+
+
+ ;;May
+ if (month = 5 and day = Y7-may-SW1) 
+[set mice-nymph-Y7-may-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y7-may-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y7-may-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y7-may-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y7-may-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y7-may-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;June
+if (month = 6 and day = Y7-jun-SW1) 
+[set mice-nymph-Y7-jun-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y7-jun-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y7-jun-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y7-jun-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y7-jun-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y7-jun-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+ 
+;;July
+if (month = 7 and day = Y7-jul-SW1) 
+[set mice-nymph-Y7-jul-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y7-jul-SW1-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y7-jul-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y7-jul-SW1-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y7-jul-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y7-jul-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y7-jul-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y7-jul-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;August
+
+if (month = 8 and day = Y7-aug-SW1) 
+[set mice-larvae-Y7-aug-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y7-aug-SW1-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y7-aug-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y7-aug-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y7-aug-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;September
+if (month = 9 and day = Y7-sep-SW1) 
+[set mice-larvae-Y7-sep-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y7-sep-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y7-sep-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y7-sep-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y7-sep-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y7-sep-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y7-sep-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+;;October
+if (month = 10 and day = Y7-oct-SW1) 
+[set mice-larvae-Y7-oct-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y7-oct-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y7-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] )  
+set deer-adult-Y7-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y7-oct-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y7-oct-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y7-oct-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y7-oct-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;nov
+ 
+if (month = 11 and day = Y7-nov-SW1) 
+ [set deer-adult-Y7-nov-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y7-nov-SW1-prev(count deer with [adult-infestation > 0])
+set quest-larvae-Y7-nov-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y7-nov-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y7-nov-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+ ]
+;;;;;;second month sampling
+
+;;;April
+if (month = 4 and day = Y7-apr-SW2) 
+[set mice-nymph-Y7-apr-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+ set mice-nymph-Y7-apr-SW2-prev(count mice with [nymphal-infestation > 0])
+ set quest-larvae-Y7-apr-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y7-apr-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y7-apr-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y7-apr-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+]
+
+;;May
+ if (month = 5 and day = Y7-may-SW2) 
+[set mice-nymph-Y7-may-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y7-may-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y7-may-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y7-may-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y7-may-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y7-may-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;June
+if (month = 6 and day = Y7-jun-SW2) 
+[set mice-nymph-Y7-jun-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y7-jun-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y7-jun-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y7-jun-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y7-jun-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y7-jun-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;July
+if (month = 7 and day = Y7-jul-SW2) 
+[set mice-nymph-Y7-jul-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y7-jul-SW2-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y7-jul-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y7-jul-SW2-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y7-jul-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y7-jul-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y7-jul-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y7-jul-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;August
+
+if (month = 8 and day = Y7-aug-SW2) 
+[set mice-larvae-Y7-aug-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y7-aug-SW2-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y7-aug-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y7-aug-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y7-aug-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+
+;;;Septmber
+if (month = 9 and day = Y7-sep-SW2) 
+[set mice-larvae-Y7-sep-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y7-sep-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y7-sep-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y7-sep-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y7-sep-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y7-sep-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y7-sep-SW2(count bugs with [lifeStage = "adult" and status = "questing"])
+]
+;;October
+if (month = 10 and day = Y7-oct-SW2) 
+[set mice-larvae-Y7-oct-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y7-oct-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y7-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y7-oct-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y7-oct-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y7-oct-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y7-oct-SW2(count bugs with [lifeStage ="adult" and status = "questing"])
+set deer-adult-Y7-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y7-oct-SW2-prev (count deer with[adult-infestation > 0])
+ set quest-larvae-Y7-oct-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y7-oct-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y7-oct-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+;;;nov
+ 
+if (month = 11 and day = Y7-nov-SW2)
+ [set deer-adult-Y7-nov-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y7-nov-SW2-prev (count deer with[adult-infestation > 0])
+set quest-larvae-Y7-nov-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y7-nov-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y7-nov-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+
+]]
+
+
+end
+
+to data-collect-year-8
+
+
+
+;;;;YEAR 8 after two year burnin
+if (year = 2019)[
+ ;;;April
+if (month = 4 and day = Y8-apr-SW1) 
+[set mice-nymph-Y8-apr-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y8-apr-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y8-apr-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y8-apr-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y8-apr-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y8-apr-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+
+]
+
+
+ ;;May
+ if (month = 5 and day = Y8-may-SW1) 
+[set mice-nymph-Y8-may-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y8-may-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y8-may-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y8-may-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y8-may-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y8-may-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;June
+if (month = 6 and day = Y8-jun-SW1) 
+[set mice-nymph-Y8-jun-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y8-jun-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y8-jun-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y8-jun-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y8-jun-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y8-jun-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+ 
+;;July
+if (month = 7 and day = Y8-jul-SW1) 
+[set mice-nymph-Y8-jul-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y8-jul-SW1-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y8-jul-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y8-jul-SW1-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y8-jul-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y8-jul-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y8-jul-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y8-jul-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;August
+
+if (month = 8 and day = Y8-aug-SW1) 
+[set mice-larvae-Y8-aug-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y8-aug-SW1-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y8-aug-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y8-aug-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y8-aug-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;September
+if (month = 9 and day = Y8-sep-SW1) 
+[set mice-larvae-Y8-sep-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y8-sep-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y8-sep-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y8-sep-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y8-sep-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y8-sep-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y8-sep-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+;;October
+if (month = 10 and day = Y8-oct-SW1) 
+[set mice-larvae-Y8-oct-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y8-oct-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y8-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] )  
+set deer-adult-Y8-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y8-oct-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y8-oct-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y8-oct-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y8-oct-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;nov
+ 
+if (month = 11 and day = Y8-nov-SW1) 
+ [set deer-adult-Y8-nov-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y8-nov-SW1-prev(count deer with [adult-infestation > 0])
+set quest-larvae-Y8-nov-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y8-nov-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y8-nov-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+ ]
+;;;;;;second month sampling
+
+;;;April
+if (month = 4 and day = Y8-apr-SW2) 
+[set mice-nymph-Y8-apr-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+ set mice-nymph-Y8-apr-SW2-prev(count mice with [nymphal-infestation > 0])
+ set quest-larvae-Y8-apr-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y8-apr-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y8-apr-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y8-apr-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+]
+
+;;May
+ if (month = 5 and day = Y8-may-SW2) 
+[set mice-nymph-Y8-may-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y8-may-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y8-may-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y8-may-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y8-may-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y8-may-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;June
+if (month = 6 and day = Y8-jun-SW2) 
+[set mice-nymph-Y8-jun-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y8-jun-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y8-jun-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y8-jun-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y8-jun-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y8-jun-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;July
+if (month = 7 and day = Y8-jul-SW2) 
+[set mice-nymph-Y8-jul-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y8-jul-SW2-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y8-jul-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y8-jul-SW2-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y8-jul-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y8-jul-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y8-jul-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y8-jul-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;August
+
+if (month = 8 and day = Y8-aug-SW2) 
+[set mice-larvae-Y8-aug-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y8-aug-SW2-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y8-aug-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y8-aug-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y8-aug-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+
+;;;Septmber
+if (month = 9 and day = Y8-sep-SW2) 
+[set mice-larvae-Y8-sep-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y8-sep-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y8-sep-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y8-sep-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y8-sep-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y8-sep-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y8-sep-SW2(count bugs with [lifeStage = "adult" and status = "questing"])
+]
+;;October
+if (month = 10 and day = Y8-oct-SW2) 
+[set mice-larvae-Y8-oct-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y8-oct-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y8-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y8-oct-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y8-oct-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y8-oct-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y8-oct-SW2(count bugs with [lifeStage ="adult" and status = "questing"])
+set deer-adult-Y8-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y8-oct-SW2-prev (count deer with[adult-infestation > 0])
+ set quest-larvae-Y8-oct-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y8-oct-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y8-oct-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+;;;nov
+ 
+if (month = 11 and day = Y8-nov-SW2)
+ [set deer-adult-Y8-nov-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y8-nov-SW2-prev (count deer with[adult-infestation > 0])
+set quest-larvae-Y8-nov-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y8-nov-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y8-nov-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+
+]]
+
+
+end
+
+to data-collect-year-9
+
+
+
+;;;;YEAR 9 after two year burnin
+if (year = 2020)[
+ ;;;April
+if (month = 4 and day = Y9-apr-SW1) 
+[set mice-nymph-Y9-apr-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y9-apr-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y9-apr-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y9-apr-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y9-apr-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y9-apr-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+
+]
+
+
+ ;;May
+ if (month = 5 and day = Y9-may-SW1) 
+[set mice-nymph-Y9-may-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y9-may-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y9-may-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y9-may-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y9-may-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y9-may-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;June
+if (month = 6 and day = Y9-jun-SW1) 
+[set mice-nymph-Y9-jun-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y9-jun-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y9-jun-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y9-jun-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y9-jun-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y9-jun-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+ 
+;;July
+if (month = 7 and day = Y9-jul-SW1) 
+[set mice-nymph-Y9-jul-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y9-jul-SW1-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y9-jul-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y9-jul-SW1-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y9-jul-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y9-jul-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y9-jul-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y9-jul-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;August
+
+if (month = 8 and day = Y9-aug-SW1) 
+[set mice-larvae-Y9-aug-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y9-aug-SW1-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y9-aug-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y9-aug-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y9-aug-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;September
+if (month = 9 and day = Y9-sep-SW1) 
+[set mice-larvae-Y9-sep-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y9-sep-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y9-sep-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y9-sep-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y9-sep-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y9-sep-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y9-sep-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+;;October
+if (month = 10 and day = Y9-oct-SW1) 
+[set mice-larvae-Y9-oct-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y9-oct-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y9-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] )  
+set deer-adult-Y9-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y9-oct-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y9-oct-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y9-oct-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y9-oct-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;nov
+ 
+if (month = 11 and day = Y9-nov-SW1) 
+ [set deer-adult-Y9-nov-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y9-nov-SW1-prev(count deer with [adult-infestation > 0])
+set quest-larvae-Y9-nov-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y9-nov-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y9-nov-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+ ]
+;;;;;;second month sampling
+
+;;;April
+if (month = 4 and day = Y9-apr-SW2) 
+[set mice-nymph-Y9-apr-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+ set mice-nymph-Y9-apr-SW2-prev(count mice with [nymphal-infestation > 0])
+ set quest-larvae-Y9-apr-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y9-apr-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y9-apr-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y9-apr-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+]
+
+;;May
+ if (month = 5 and day = Y9-may-SW2) 
+[set mice-nymph-Y9-may-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y9-may-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y9-may-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y9-may-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y9-may-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y9-may-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;June
+if (month = 6 and day = Y9-jun-SW2) 
+[set mice-nymph-Y9-jun-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y9-jun-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y9-jun-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y9-jun-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y9-jun-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y9-jun-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;July
+if (month = 7 and day = Y9-jul-SW2) 
+[set mice-nymph-Y9-jul-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y9-jul-SW2-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y9-jul-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y9-jul-SW2-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y9-jul-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y9-jul-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y9-jul-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y9-jul-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;August
+
+if (month = 8 and day = Y9-aug-SW2) 
+[set mice-larvae-Y9-aug-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y9-aug-SW2-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y9-aug-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y9-aug-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y9-aug-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+
+;;;Septmber
+if (month = 9 and day = Y9-sep-SW2) 
+[set mice-larvae-Y9-sep-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y9-sep-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y9-sep-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y9-sep-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y9-sep-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y9-sep-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y9-sep-SW2(count bugs with [lifeStage = "adult" and status = "questing"])
+]
+;;October
+if (month = 10 and day = Y9-oct-SW2) 
+[set mice-larvae-Y9-oct-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y9-oct-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y9-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y9-oct-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y9-oct-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y9-oct-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y9-oct-SW2(count bugs with [lifeStage ="adult" and status = "questing"])
+set deer-adult-Y9-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y9-oct-SW2-prev (count deer with[adult-infestation > 0])
+ set quest-larvae-Y9-oct-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y9-oct-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y9-oct-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+;;;nov
+ 
+if (month = 11 and day = Y9-nov-SW2)
+ [set deer-adult-Y9-nov-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y9-nov-SW2-prev (count deer with[adult-infestation > 0])
+set quest-larvae-Y9-nov-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y9-nov-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y9-nov-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+
+]]
+
+
+end
+
+to data-collect-year-10
+
+
+
+;;;;YEAR 10 after two year burnin
+if (year = 2021)[
+ ;;;April
+if (month = 4 and day = Y10-apr-SW1) 
+[set mice-nymph-Y10-apr-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y10-apr-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y10-apr-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y10-apr-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y10-apr-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y10-apr-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+
+]
+
+
+ ;;May
+ if (month = 5 and day = Y10-may-SW1) 
+[set mice-nymph-Y10-may-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y10-may-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y10-may-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y10-may-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y10-may-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y10-may-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;June
+if (month = 6 and day = Y10-jun-SW1) 
+[set mice-nymph-Y10-jun-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y10-jun-SW1-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y10-jun-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y10-jun-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y10-jun-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y10-jun-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+ 
+;;July
+if (month = 7 and day = Y10-jul-SW1) 
+[set mice-nymph-Y10-jul-SW1-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y10-jul-SW1-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y10-jul-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y10-jul-SW1-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y10-jul-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y10-jul-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y10-jul-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y10-jul-SW1 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;August
+
+if (month = 8 and day = Y10-aug-SW1) 
+[set mice-larvae-Y10-aug-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y10-aug-SW1-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y10-aug-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y10-aug-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y10-aug-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;September
+if (month = 9 and day = Y10-sep-SW1) 
+[set mice-larvae-Y10-sep-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y10-sep-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y10-sep-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y10-sep-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y10-sep-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y10-sep-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y10-sep-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+]
+
+;;October
+if (month = 10 and day = Y10-oct-SW1) 
+[set mice-larvae-Y10-oct-SW1-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y10-oct-SW1-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y10-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] )  
+set deer-adult-Y10-oct-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y10-oct-SW1-prev(count deer with [adult-infestation > 0])
+ set quest-larvae-Y10-oct-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y10-oct-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y10-oct-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+;;;nov
+ 
+if (month = 11 and day = Y10-nov-SW1) 
+ [set deer-adult-Y10-nov-SW1-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y10-nov-SW1-prev(count deer with [adult-infestation > 0])
+set quest-larvae-Y10-nov-SW1 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y10-nov-SW1 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y10-nov-SW1 (count bugs with [lifeStage = "adult" and status = "questing"])
+ ]
+;;;;;;second month sampling
+
+;;;April
+if (month = 4 and day = Y10-apr-SW2) 
+[set mice-nymph-Y10-apr-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+ set mice-nymph-Y10-apr-SW2-prev(count mice with [nymphal-infestation > 0])
+ set quest-larvae-Y10-apr-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y10-apr-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y10-apr-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y10-apr-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])
+]
+
+;;May
+ if (month = 5 and day = Y10-may-SW2) 
+[set mice-nymph-Y10-may-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y10-may-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y10-may-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y10-may-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y10-may-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y10-may-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;June
+if (month = 6 and day = Y10-jun-SW2) 
+[set mice-nymph-Y10-jun-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"]) 
+set mice-nymph-Y10-jun-SW2-prev(count mice with [nymphal-infestation > 0])
+set quest-larvae-Y10-jun-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y10-jun-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y10-jun-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y10-jun-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+;;July
+if (month = 7 and day = Y10-jul-SW2) 
+[set mice-nymph-Y10-jul-SW2-infest (count bugs with [lifeStage = "nymph" and Nhost = "mouse" and status = "feeding"] ) 
+set mice-nymph-Y10-jul-SW2-prev(count mice with [nymphal-infestation > 0])
+set mice-larvae-Y10-jul-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+set mice-larvae-Y10-jul-SW2-prev(count mice with [larval-infestation > 0])
+set quest-larvae-Y10-jul-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y10-jul-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y10-jul-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+set fed-mice-nymphs-Y10-jul-SW2 (count bugs with [lifeStage = "nymph" and Lhost = "mouse"and Tinfected? = false])]
+
+
+;;August
+
+if (month = 8 and day = Y10-aug-SW2) 
+[set mice-larvae-Y10-aug-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y10-aug-SW2-prev(count mice with [larval-infestation > 0])
+ set quest-larvae-Y10-aug-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y10-aug-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y10-aug-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+
+;;;Septmber
+if (month = 9 and day = Y10-sep-SW2) 
+[set mice-larvae-Y10-sep-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y10-sep-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y10-sep-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y10-sep-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y10-sep-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y10-sep-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y10-sep-SW2(count bugs with [lifeStage = "adult" and status = "questing"])
+]
+;;October
+if (month = 10 and day = Y10-oct-SW2) 
+[set mice-larvae-Y10-oct-SW2-infest (count bugs with [lifeStage = "larva" and Lhost = "mouse" and status = "feeding"] ) 
+ set mice-larvae-Y10-oct-SW2-prev(count mice with [larval-infestation > 0])
+ set deer-adult-Y10-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y10-oct-SW2-prev(count deer with[adult-infestation > 0])
+ set quest-larvae-Y10-oct-SW2(sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y10-oct-SW2(count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y10-oct-SW2(count bugs with [lifeStage ="adult" and status = "questing"])
+set deer-adult-Y10-oct-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+ set deer-adult-Y10-oct-SW2-prev (count deer with[adult-infestation > 0])
+ set quest-larvae-Y10-oct-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+ set quest-nymph-Y10-oct-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+ set quest-adult-Y10-oct-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])]
+
+
+;;;nov
+ 
+if (month = 11 and day = Y10-nov-SW2)
+ [set deer-adult-Y10-nov-SW2-infest (count bugs with [lifeStage = "adult" and Ahost = "a-deer" and status = "feeding"] ) 
+set deer-adult-Y10-nov-SW2-prev (count deer with[adult-infestation > 0])
+set quest-larvae-Y10-nov-SW2 (sum [questlarvae] of patches + (count bugs with[lifeStage ="larva" and status = "questing"]))
+set quest-nymph-Y10-nov-SW2 (count bugs with [lifeStage = "nymph" and status = "questing"])
+set quest-adult-Y10-nov-SW2 (count bugs with [lifeStage = "adult" and status = "questing"])
+
+]]
+
+
+end
